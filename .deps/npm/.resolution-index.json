@@ -1,0 +1,39 @@
+{
+  "contracts/1_Storage.sol": {
+    "__sources__": {
+      "contracts/1_Storage.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\n\npragma solidity >=0.8.2 <0.9.0;\n\n/**\n * @title Storage\n * @dev Store & retrieve value in a variable\n * @custom:dev-run-script ./scripts/deploy_with_ethers.ts\n */\ncontract Storage {\n\n    uint256 number;\n\n    /**\n     * @dev Store value in variable\n     * @param num value to store\n     */\n    function store(uint256 num) public {\n        number = num;\n    }\n\n    /**\n     * @dev Return value \n     * @return value of 'number'\n     */\n    function retrieve() public view returns (uint256){\n        return number;\n    }\n}",
+        "file": "contracts/1_Storage.sol"
+      }
+    }
+  },
+  "contracts/Dework.sol": {
+    "__sources__": {
+      "contracts/Dework.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity >=0.8.2  <0.9.0;\r\n\r\ncontract Dework{\r\n    uint256 userVisited = 0 ;\r\n    bool hasSignedIn = false ;\r\n    function greetUser() public pure returns(string memory){\r\n        return \"Welcome to Dework\" ;\r\n    } \r\n    function updateUser() public {\r\n        if(hasSignedIn){\r\n            userVisited = userVisited + 1 ;\r\n        }\r\n    }\r\n    function totalUsers() public view returns(uint256){\r\n        return userVisited ;\r\n    }\r\n\r\n    \r\n}",
+        "file": "contracts/Dework.sol"
+      }
+    }
+  },
+  "contracts/types/EmployeeProfile.sol": {
+    "__sources__": {
+      "contracts/types/EmployeeProfile.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity >=0.8.2  <0.9.0;\r\n\r\nstruct EmployeeProfile{\r\n    uint256 id ;\r\n    string name ;\r\n    bool isHiring ;\r\n    address wallet ;\r\n}",
+        "file": "contracts/types/EmployeeProfile.sol"
+      }
+    }
+  },
+  "contracts/EmployeeRegistration.sol": {
+    "contracts/types/EmployerProfile.sol": "contracts/types/EmployerProfile.sol",
+    "__sources__": {
+      "contracts/EmployeeRegistration.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity >=0.8.2  <0.9.0;\r\n\r\nimport {EmployerProfile} from \"contracts/types/EmployerProfile.sol\" ;\r\n\r\ncontract EmployeeRegistration{\r\n    EmployerProfile[] employerProfile ;\r\n\r\n    function registerEmployee(\r\n        string calldata name,\r\n        bool hiringStatus\r\n    ) public {\r\n        uint256 employerId = employerProfile.length ;\r\n        EmployerProfile memory employer = EmployerProfile(\r\n            {\r\n                id : employerId ,\r\n                name : name ,\r\n                isHiring : hiringStatus ,\r\n                wallet : msg.sender\r\n            }\r\n        );\r\n        employerProfile.push(employer) ;\r\n    }\r\n    function totalEmployer() public view returns(uint256){\r\n        return employerProfile.length ;\r\n    }\r\n\r\n}",
+        "file": "contracts/EmployeeRegistration.sol"
+      },
+      "contracts/types/EmployerProfile.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity >=0.8.2  <0.9.0;\r\n\r\nstruct EmployerProfile{\r\n    uint256 id ;\r\n    string name ;\r\n    bool isHiring ;\r\n    address wallet ;\r\n}",
+        "file": "contracts/types/EmployerProfile.sol"
+      }
+    }
+  }
+}

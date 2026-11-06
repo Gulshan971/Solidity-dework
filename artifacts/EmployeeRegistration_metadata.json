@@ -1,0 +1,85 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "hiringStatus",
+						"type": "bool"
+					}
+				],
+				"name": "registerEmployee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalEmployer",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/EmployeeRegistration.sol": "EmployeeRegistration"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/EmployeeRegistration.sol": {
+			"keccak256": "0xecf1367a8d9fcf22eec1abc530c58d701730dd67a30f083b5966d57e5c79edee",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://2e9c22a655e826d8f702f4c2ebc9e76c8167185109d17a59a09f3a0d5d0fc036",
+				"dweb:/ipfs/QmSZSXD2ttNRNw7daCLVLEXqY3PwvZcg1yb2bRDd5iRnzX"
+			]
+		},
+		"contracts/types/EmployerProfile.sol": {
+			"keccak256": "0x616d2f748e35707b142b5be826d566e08bda19a72d5478b1690f75e7c69b7f18",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://05a6ad2941b18ecacb7f85a2087b5b5e03113a33b59ce9afd67f18b75d5e7151",
+				"dweb:/ipfs/QmZS9hLT86L4pSQxK1gqfB1REL2JwSNtotaWBYDTftNkfH"
+			]
+		}
+	},
+	"version": 1
+}
