@@ -6,7 +6,7 @@ import {EmployerProfile} from "contracts/types/EmployerProfile.sol" ;
 contract EmployeeRegistration{
     EmployerProfile[] employerProfile ;
     mapping(uint256 => address) public employerIdToAddress ;
-
+    event EmployerRegisteredNotification(uint256  employerId , address caller) ; 
     function registerEmployee(
         string calldata name,
         bool hiringStatus
@@ -22,8 +22,9 @@ contract EmployeeRegistration{
         );
         employerProfile.push(employer) ;
         employerIdToAddress[employerId] = msg.sender ;
+        emit EmployerRegisteredNotification(employerId, msg.sender);
     }   
-    function totalEmployer() public view returns(uint256){
+    function totalEmployer() external view returns(uint256){
         return employerProfile.length ;
     }
 
